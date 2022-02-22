@@ -1,0 +1,16 @@
+<head>
+    <title>Create wiki entry</title>
+</head>
+
+<body>
+    <h2>Create wiki entry</h2>
+    <p>
+        <form action="{% url 'create_entry' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}            
+            <input type="submit" value="Save">
+        </form>
+    </p>
+</body>
+
+</html>

@@ -13,9 +13,12 @@
         {{entry_text|safe}}
       </p>
       <p>
-        Button to edit mode
-        <button onclick="location.href='{% url 'edit_entry' entry_title %}'" type="button">
-          Edit</button>      
+        <button onclick="location.href='{% url 'edit_entry' entry_title.lower %}'" type="button">
+          Edit
+        </button>      
+      </p>
+      <p>
+        <a href="{% url 'create_entry' %}">Create new entry</a>
       </p>
   </body>
 </html>
