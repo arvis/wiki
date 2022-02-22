@@ -1,0 +1,10 @@
+{% load parse_entry %}
+
+
+
+<body>
+    <p>
+      <h2>{{entry_title }}</h2>  
+    </p>
+    {{entry_text|wiki_parse|safe}}
+</body>

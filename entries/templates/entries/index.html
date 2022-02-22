@@ -1,0 +1,10 @@
+{% load parse_entry %}
+
+
+
+<body>
+    <p>
+        This is index file
+    </p>
+    {{wiki_text|wiki_parse|safe}}
+</body>
