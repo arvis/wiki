@@ -9,7 +9,12 @@
 <body>
     <p>
         All pages:
-        
+        <ul>
+        {% for entry in entries %}
+            <li><a href="{% url 'view_entry' entry.title %}">{{ entry.title }}</a></li>
+        {% endfor %}        
+        </ul>
+
     </p>
     <p>
         <a href="{% url 'create_entry' %}">Create new entry</a>

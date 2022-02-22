@@ -7,11 +7,8 @@ from .forms import EntryForm, EntryModelForm
 from .models import Entry
 
 def all_entries(request):
-    parsed = parse_string('aaaaa [bbbb] cccc')
-    context = {
-        'wiki_text': 'Framework [Django] is written in [Python] programming language.'
-    }
-    return render(request, 'entries/index.html', context)
+    entries = Entry.objects.all()
+    return render(request, 'entries/index.html', {'entries':entries})
 
 def view_entry(request, entry_title):
     if not entry_exists(entry_title):
