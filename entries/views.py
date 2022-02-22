@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .parsers import parse_string
 from django.urls import reverse
+
+from .parsers import parse_string
+
 
 def all_entries(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
@@ -14,7 +16,7 @@ def all_entries(request):
 def view_entry(request, entry_title):
     context = {
         'entry_title': entry_title,
-        'entry_text': 'Framework [Django] is written in [Python] programming language.'
+        'entry_text': parse_string('Framework [Django] is written in [Python] programming language.')
     }
     return render(request, 'entries/view_entry.html', context)
 

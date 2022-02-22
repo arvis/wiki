@@ -1,10 +1,21 @@
 {% load parse_entry %}
 
-
-
-<body>
-    <p>
-      <h2>{{entry_title }}</h2>  
-    </p>
-    {{entry_text|wiki_parse|safe}}
-</body>
+<html>
+  <head>
+    <title>{{entry_title }} view</title>
+  </head>
+  
+  <body>
+      <p>
+        <h2>{{entry_title }}</h2>  
+      </p>
+      <p>
+        {{entry_text|safe}}
+      </p>
+      <p>
+        Button to edit mode
+        <button onclick="location.href='{% url 'edit_entry' entry_title %}'" type="button">
+          Edit</button>      
+      </p>
+  </body>
+</html>
